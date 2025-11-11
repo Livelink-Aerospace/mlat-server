@@ -10,6 +10,25 @@ messages to model the clock characteristics of each receiver.
 Then it does multilateration of aircraft that are transmitting only Mode S
 using the same receivers.
 
+## Livelink Aerospace fork
+
+- Update for recent python versions
+- Add start scripts and service files
+- Add example service file
+
+To run the service
+```
+# copy the service file
+sudo cp mlat-server.service /lib/systemd/system/mlat-server.service
+# edit the user or paths as necessary
+sudo nano /lib/systemd/system/mlat-server.service
+# start the service
+sudo systemctl enable mlat-server
+sudo systemctl start mlat-server
+# chect the status
+sudo systemctl status mlat-server
+```
+
 ## License
 
 It is important that you read this section before using or modifying the server!

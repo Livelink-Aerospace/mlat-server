@@ -1,0 +1,14 @@
+[Unit]
+Description=mlat-server: Multi-lateration for ADS-B signals
+
+[Service]
+Type=simple
+WorkingDirectory=/home/vision/mlat-server
+User=vision
+ExecStart=/home/vision/.virtualenvs/mlat/bin/python mlat-server --work-dir output --client-listen 8123 --write-csv output/aircraft.csv
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+
